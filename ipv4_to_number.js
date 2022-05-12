@@ -1,11 +1,16 @@
-function ip_to_number(ip)
+const iptn = 
 {
-    let ret = 0
-    let vec = ip.split('.')
-    for (const key in vec) 
+    ip_to_number : function(ip)
     {
-        let m = vec[key] * Math.pow(2,8*(3-key))
-        ret += m
+        let ret = 0
+        let vec = ip.split('.')
+        for (const key in vec) 
+        {
+            let m = vec[key] * Math.pow(2,8*(3-key))
+            ret += m
+        }
+        return ret
     }
-    return ret
 }
+
+module.exports = iptn
